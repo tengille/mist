@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
+    <link href="./styles.css" rel="stylesheet">
+    <title>MVST</title>
+  </head>
+  <body>
+    <!-- We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>. -->
+
+      <input id="loader" type="file" multiple webkitdirectory />
+      <div id="sidebar"">
+        <div id="banner"><i>~mvst~</i></div>
+      </div>
+      <div id="controls">
+        <div id="song"></div>
+        <div id="controls-inner">
+          <div class="control" id="back">⏪</div>
+          <div class="control" id="play-pause">▶️</div>
+          <div class="control" id="next">⏩</div>
+          <div>
+            <!-- oninput="volumeChange()" -->
+            <input
+              id="volume"
+              value="0.1"
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="background"></div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./js/renderer.js"></script>
+    <script src="./js/Player.js"></script>
+    <script src="./js/lib/jsmediatags.min.js"></script>
+    <script unsafe-eval src="./js/main.js"></script>
+  </body>
+</html>
+
+<!-- ⏸️ -->
